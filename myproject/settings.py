@@ -246,7 +246,11 @@ INSTALLED_APPS = (
     "mezzanine.blog",
     "mezzanine.forms",
     "mezzanine.galleries",
-    "mezzanine.twitter",
+    "mezzanine.twitter"
+    "prof",
+    "theme",
+    "blogs",
+    "bootstrap3",
     # "mezzanine.accounts",
     # "mezzanine.mobile",
 )
