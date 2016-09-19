@@ -37,7 +37,12 @@ urlpatterns += [
     # one homepage pattern, so if you use a different one, comment this
     # one out.
 
+   
     url("^$", direct_to_template, {"template": "index.html"}, name="home"),
+    url("^bases$", direct_to_template, {"template": "bases.html"}, name="home"),
+    url(r'^register/$', profviews.register, name='register'),
+    url(r'^blogs/$', 'blogs.views.index'),
+    url(r'^(?P<slug>[\w\-]+)/$', 'blogs.views.post'),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
