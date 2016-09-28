@@ -31,3 +31,7 @@ def register(request):
     else:
         form = Register()
     return render(request,'contactus.html',locals())    
+
+
+def home(request):
+    return render(request,'indexx.html',locals())

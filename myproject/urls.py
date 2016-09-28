@@ -7,8 +7,9 @@ from django.views.i18n import set_language
 
 from mezzanine.core.views import direct_to_template
 from mezzanine.conf import settings
-
-
+from prof import views as profviews
+#from blogs import views as blogsviews
+ 
 admin.autodiscover()
 
 # Add the urlpatterns for any custom Django applications here.
@@ -38,11 +39,12 @@ urlpatterns += [
     # one out.
 
    
-    url("^$", direct_to_template, {"template": "index.html"}, name="home"),
+    url("^$", profviews.home, name="abcindex"),
+    #url("^index$", direct_to_template, {"template": "index.html"}, name="index"),
     url("^bases$", direct_to_template, {"template": "bases.html"}, name="home"),
     url(r'^register/$', profviews.register, name='register'),
-    url(r'^blogs/$', 'blogs.views.index'),
-    url(r'^(?P<slug>[\w\-]+)/$', 'blogs.views.post'),
+    #url(r'^blogs/$', 'blogs.views.index'),
+    #url(r'^(?P<slug>[\w\-]+)/$', 'blogs.views.post'),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
     # ---------------------------------------------
@@ -82,7 +84,7 @@ urlpatterns += [
     # ``mezzanine.urls``, go right ahead and take the parts you want
     # from it, and use them directly below instead of using
     # ``mezzanine.urls``.
-    url("^", include("mezzanine.urls")),
+    #url("^", include("mezzanine.urls")),
 
     # MOUNTING MEZZANINE UNDER A PREFIX
     # ---------------------------------
